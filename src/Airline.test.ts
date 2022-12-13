@@ -3,9 +3,9 @@ import Airline from "./Airline";
 
 /**
  * 간단한 비행기 탑승 시뮬레이션입니다.
- * 비행기 탑승은 1명씩 체크인이 가능합니다.
+ * 비행기 탑승은 1명씩 체크인 할 수 있습니다. 다른 한명이 체크인 진행 중이면 체크인을 막아야합니다.
+ * 우리는 탑승 고객을 순서대로 받아야합니다.(_customersOnBoard)
  * 체크인은 출국 심사관에 따라서 랜덤한 시간을 가집니다.
- * 현재 여러 타입라인으로 구성되어있습니다.
  */
 
 describe("Airline", () => {
@@ -43,9 +43,9 @@ describe("Airline", () => {
       gabiaAirline.addToLine("Wally3");
       gabiaAirline.addToLine("Mory4");
 
-        jest.runAllTimers();
+      jest.runAllTimers();
 
-        expect(gabiaAirline.customersOnBoard).toStrictEqual([
+      expect(gabiaAirline.customersOnBoard).toStrictEqual([
         "Lime1",
         "Ellie2"
       ]);
