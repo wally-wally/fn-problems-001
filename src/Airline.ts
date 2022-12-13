@@ -19,7 +19,7 @@ export default class Airline {
 
     // 체크인 하기
     this.checkIn((peopleId) => {
-      console.log(`${peopleId} - 탑승이 완료되었습니다.`);
+      console.log(`${peopleId} - 탑승이 시작했습니다.`);
       this.addCustomerOnBoard(peopleId); // 탑승 완료 시키기
     });
   }

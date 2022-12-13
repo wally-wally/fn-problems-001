@@ -51,26 +51,27 @@ describe("Airline", () => {
       ]);
     });
 
-    it("세번째 문제", () => {
-      /**
-       * 비행사에서 고객이 탑승할 때마다 로그를 가지려고합니다.
-       * 탑승고객을 콘솔로 찍어주세요.
-       * log-{탑승고객명} 으로 출력해주세요.
-       * addCustomerOnBoard 에서 Log를 찍어야합니다.
-       */
-      const consoleWarnMock = jest.spyOn(console, "log").mockImplementation();
-
-      const gabiaAirline = new Airline();
-
-      gabiaAirline.addToLine("Lime1");
-      gabiaAirline.addToLine("Ellie2");
-
-      jest.runAllTimers();
-
-      expect(consoleWarnMock.mock.calls).toEqual(
-        expect.arrayContaining([["log-Lime1"], ["log-Ellie2"]])
-      );
-
-      consoleWarnMock.mockRestore();
-    });
+    // 세번째 문제는 일단 제외하도록 해요. 1번 2번부터
+    // it("세번째 문제", () => {
+    //   /**
+    //    * 비행사에서 고객이 탑승할 때마다 로그를 가지려고합니다.
+    //    * 탑승고객을 콘솔로 찍어주세요.
+    //    * log-{탑승고객명} 으로 출력해주세요.
+    //    * addCustomerOnBoard 에서 Log를 찍어야합니다.
+    //    */
+    //   const consoleWarnMock = jest.spyOn(console, "log").mockImplementation();
+    //
+    //   const gabiaAirline = new Airline();
+    //
+    //   gabiaAirline.addToLine("Lime1");
+    //   gabiaAirline.addToLine("Ellie2");
+    //
+    //   jest.runAllTimers();
+    //
+    //   expect(consoleWarnMock.mock.calls).toEqual(
+    //     expect.arrayContaining([["log-Lime1"], ["log-Ellie2"]])
+    //   );
+    //
+    //   consoleWarnMock.mockRestore();
+    // });
 });
