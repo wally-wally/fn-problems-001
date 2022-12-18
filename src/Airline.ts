@@ -2,7 +2,7 @@ import { BoardingWaitingLine } from "./types";
 
 export default class Airline {
   /** 탑승 대기 줄 */
-  private boardingWaitingLine: BoardingWaitingLine[];
+  private readonly boardingWaitingLine: BoardingWaitingLine[];
 
   /** 탑승 고객 */
   private readonly _customersOnBoard: string[];
