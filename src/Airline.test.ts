@@ -36,7 +36,7 @@ describe("Airline", () => {
        * 비행기 사정으로 인해서 선착순으로 도착한 2명만 탑승이 가능합니다.
        */
 
-      const gabiaAirline = new Airline();
+      const gabiaAirline = new Airline(2);
 
       gabiaAirline.addToLine("Lime1");
       gabiaAirline.addToLine("Ellie2");
