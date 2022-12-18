@@ -37,12 +37,6 @@ export default class Airline {
 
     // 새로운 체크인
     this.newCheckIn();
-
-    // // 체크인 하기
-    // this.checkIn((peopleId) => {
-    //   console.log(`${peopleId} - 탑승이 시작했습니다.`);
-    //   this.addCustomerOnBoard(peopleId); // 탑승 완료 시키기
-    // });
   }
 
   /** 탑승한 인원으로 추가하기 */
@@ -62,33 +56,6 @@ export default class Airline {
     }, Math.floor(Math.random() * 3 * 1000));
   }
 
-  // /**
-  //  * 체크인 하기
-  //  * 
-  //  * 체크인은 시간이 걸립니다.
-  //  */
-  // checkIn(done: (peopleId: string) => void) {
-  //   if (this.isImmigrating) {
-  //     console.log('체크인 하는 사람 아직 있당');
-  //     return;
-  //   }
-  //   if (!this.boardingWaitingLine.length) {
-  //     console.log("탑승 가능한 인원이 없습니다.");
-  //     return;
-  //   }
-
-  //   this.isImmigrating = true;
-
-  //   const peopleId = this.boardingWaitingLine.shift(); // 대기줄에서 첫번째 사람을 탑승자로 지정한다.
-
-  //   this.immigration(() => {
-  //     if (peopleId) {
-  //       this.isImmigrating = false;
-  //       done(peopleId);
-  //     }
-  //   });
-  // }
-
   /**
    * 체크인 하기
    * 
@@ -107,7 +74,8 @@ export default class Airline {
 
     this.isImmigrating = true;
 
-    const { peopleId, callbackAfterImmigrating } = this.boardingWaitingLine.shift() as BoardingWaitingLine; // 대기줄에서 첫번째 사람을 탑승자로 지정한다.
+    // 대기줄에서 첫번째 사람을 탑승자로 지정한다.
+    const { peopleId, callbackAfterImmigrating } = this.boardingWaitingLine.shift() as BoardingWaitingLine;
 
     if (this._customersOnBoard.length >= this.maxCustomer) {
       console.log('최대 탑승 고객 수에 도달했습니다.');
